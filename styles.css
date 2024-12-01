@@ -1,0 +1,187 @@
+:root {
+  /* Variáveis de cores */
+  --background-light: #FFF1F5; /* Fundo suave rosado */
+  --text-dark: #000000; /* Roxo escuro para texto */
+  --text-gray: #000000; /* Roxo acinzentado */
+  --pink-bright: #ff80b0; /* Rosa vibrante */
+  --heart-red: #ff0000; /* Rosa avermelhado do coração */
+  --shadow-color: rgba(131, 46, 114, 0.703); /* Sombra roxa clara */
+  --shadow-heart: rgba(37, 31, 33, 0.647); /* Sombra do coração */
+  --footer-text: #000000; /* Roxo suave para texto do rodapé */
+  --button-hover: #e15a92; /* Rosa mais intenso ao passar o mouse */
+  --button-text: white; /* Cor do texto do botão */
+}
+
+
+/* Reset básico */
+body, h1, p {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+/* Estilos do corpo principal */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-light); /* Fundo claro e suave */
+  color: var(--text-dark); /* Texto escuro */
+  text-align: center; /* Centraliza o conteúdo */
+  padding: 20px;
+  min-height: 100vh; /* Altura mínima da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--background-container); /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 6px 12px var(--shadow-color); /* Sombra suave */
+  text-align: center; /* Centraliza o conteúdo dentro do container */
+}
+
+/* Estilo do cabeçalho */
+header {
+  margin-bottom: 30px;
+  padding: 10%;
+}
+
+header h1 {
+  font-size: 3rem; /* Tamanho grande do título */
+  color: var(--pink-bright); /* Rosa vibrante */
+  font-weight: bold;
+  padding: 5%;
+  text-shadow: 1px 1px 2px var(--shadow-color); /* Sombra suave no título */
+}
+
+header p {
+  font-size: 1.4rem; /* Tamanho do subtítulo */
+  color: var(--text-gray); /* Cinza suave */
+  margin-top: 10px;
+  font-style: italic; /* Estilo itálico */
+}
+
+.texto {
+  padding: 10%;
+}
+
+/* Estilo das imagens */
+.image {
+  width: 250px; /* Largura das imagens */
+  height: auto; /* Proporção automática */
+  margin: 15px auto; /* Espaçamento e centralização */
+  display: block;
+  padding: 8%;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px var(--shadow-color); /* Sombra suave nas imagens */
+}
+
+.subCore {
+  padding: 5%;
+}
+
+.core {
+  height: 150px;
+  width: 150px;
+  background: var(--heart-red); /* Cor do coração */
+  position: relative;
+  transform: rotate(-45deg); /* Gira para criar o formato de coração */
+  margin: 50px auto; /* Centraliza na tela */
+  box-shadow: -10px 10px 90px var(--shadow-heart); /* Sombra suave */
+  animation: core 0.6s linear infinite;
+}
+
+@keyframes core {
+  0% {
+    transform: rotate(-45deg) scale(1.02);
+  }
+  20% {
+    transform: rotate(-45deg) scale(1.03);
+  }
+  40% {
+    transform: rotate(-45deg) scale(1.04);
+  }
+}
+
+/* Parte superior esquerda do coração */
+.core::before {
+  content: '';
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background: var(--heart-red); /* Cor igual ao corpo principal */
+  border-radius: 50%; /* Cria o formato arredondado */
+}
+
+.core::after {
+  content: '';
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background: var(--heart-red); /* Cor igual ao corpo principal */
+  top: -73px; /* Centraliza verticalmente */
+  left: 0px; /* Move para a direita para alinhar */
+  border-radius: 50%; /* Cria o formato arredondado */
+}
+
+#by {
+  font-family: 'Arima Madurai', cursive;
+  color: var(--footer-text);
+  font-size: 10px;
+  transform: rotate(-45deg);
+  position: relative;
+  left: 22%;
+  bottom: 15%;
+}
+
+/* Estilo das mensagens */
+.message {
+  font-size: 1.2rem; /* Tamanho do texto das mensagens */
+  color: var(--text-dark); /* Cor escura */
+  margin-top: 15px;
+  font-style: italic; /* Estilo itálico */
+  line-height: 1.5; /* Maior espaçamento entre linhas */
+  text-align: justify; /* Justifica o texto */
+}
+
+/* Botão Cartinha */
+.CartinhaButton {
+  background-color: var(--pink-bright); /* Rosa vibrante */
+  border-radius: 12px;
+  padding: 15px 35px;
+  font-size: 20px;
+  color: var(--button-text);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  box-shadow: 0px 6px 10px var(--shadow-color); /* Sombra suave */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+.CartinhaButton:hover {
+  background-color: var(--button-hover); /* Rosa mais intenso ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.CartinhaButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Lua no canto */
+.moon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background: url("imgs/core e lua.png") no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
